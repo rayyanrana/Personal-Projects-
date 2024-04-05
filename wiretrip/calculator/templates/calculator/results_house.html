@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}
+Calculations for House
+{% endblock %}
+
+{% block content %}
+
+{% for floor in floors %}
+
+    <div class="col text-center mx-auto" style="width: fit-content;">
+
+        <div class="row">
+            <p class="text-center fs-2">Wiring Equipment Required for {{floor.name}}</p>
+        </div>
+
+    <div class="row">
+        <p class="text-center fs-3">Required Lengths of all Electric Wires</p>
+    </div>
+
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Wire Type</th>
+                <th scope="col">Wire Color</th>
+                <th scope="col">Wire Length (m)</th>
+                <th scope="col">Number of 90m rolls</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">1</th>
+                <td>2.5 mm , 7/029</td>
+                <td style="color: red;">Red</td>
+                <td>{{floor.length_main}}</td>
+                <td>{{floor.num_rolls_main}}</td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>2.5 mm , 7/029</td>
+                <td style="color: black;">Black</td>
+                <td>{{floor.length_main}}</td>
+                <td>{{floor.num_rolls_main}}</td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                <td>4/6 mm</td>
+                <td style="color: red;">Red</td>
+                <td>{{floor.length_main}}</td>
+                <td>{{floor.num_rolls_main}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>4/6 mm</td>
+                    <td style="color: black;">Black</td>
+                    <td>{{floor.length_main}}</td>
+                    <td>{{floor.num_rolls_main}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>1.5 mm , 3/029</td>
+                    <td style="color: red;">Red</td>
+                    <td>{{floor.length_sec_red}}</td>
+                    <td>{{floor.num_rolls_sec_red}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>1.5 mm , 3/029</td>
+                    <td style="color: black;">Black</td>
+                    <td>{{floor.length_sec_black}}</td>
+                    <td>{{floor.num_rolls_sec_black}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>Earth</td>
+                    <td style="color: green;">Green</td>
+                    <td>{{floor.length_main}}</td>
+                    <td>{{floor.num_rolls_main}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row" style="padding-top: 50px;">
+        <p class="text-center fs-3">Breaker Distribution for each Living Unit</p>
+    </div>
+
+    <div class="row">
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th scope="col">Living Unit</th>
+                <th scope="col">Type</th>
+                <th scope="col">Dimensions (ft.)</th>
+                <th scope="col">Required Circuit Breaker(s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in floor.rows_table_2 %}
+                    <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ row.item1 }}</td>
+                    <td>{{ row.item2 }}</td>
+                    <td>{{ row.item3 }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row" style="padding-top: 50px;">
+        <p class="text-center fs-3">Protection Requirements</p>
+    </div>
+
+    <div class="row">
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Type</th>
+                <th scope="col">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in floor.rows_table_3 %}
+                    <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ row.item1 }}</td>
+                    <td>{{ row.item2 }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+
+{% endfor %}
+
+{% endblock %}

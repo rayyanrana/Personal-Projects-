@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+
+{% block title %}
+Flat
+{% endblock %}
+
+{% block content %}
+
+<!-- Living Unit Form -->
+<div id = "living-unit-form" class="card mx-auto pb-5 mt-4" style="display: none;">
+    
+    <div id="header" class="card-header text-bg-light text-center">
+        Living Unit# 1
+    </div>
+    
+    <div class="container">
+        
+        <div class="row gy-3 mt-2">
+
+            <!-- Dimensions in ft. -->
+            <div class="col-md align-self-center">
+                <p class="fs-5 my-auto text-center">Dimensions in ft.</p>
+
+                <div class="row">
+                    <div class="col-md">
+                        <input id="length" type="number" name="lengths" min="1" class="m-2 mx-auto required-inputs form-control text-center" style="width: 8rem;" placeholder="Length" aria-label="Length">
+                    </div>
+                    <div class="col-md">    
+                        <input id="width" type="number" name="widths" min="1" class="m-2 mx-auto required-inputs form-control text-center" style="width: 8rem;" placeholder="Width" aria-label="Width">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type of Living Unit -->
+            <div class="col-md align-self-center">
+                <p class="fs-5 text-center my-auto">Type of Living Unit</p>
+
+                <select name="type_of_living_unit" class="mt-2 form-select mx-auto text-center" style="width: 10rem;" aria-label="Default select example">
+                    <option selected value="Bedroom">Bedroom</option>
+                    <option value="Living Room">Living Room</option>
+                    <option value="Kitchen">Kitchen</option>
+                    <option value="Corridor">Corridor</option>
+                    <option value="Outdoor">Outdoor</option>
+                </select>
+            </div>
+
+            <div class="container mt-3">
+
+                <div class="row">
+                    <div class="col">
+                        <p class="fs-5 text-center my-auto">Low Power Appliances</p>
+                        <div class="row align-self-center">
+
+                            <div class="col-sm mt-2">
+                                <div class="col text-center">
+                                    <label class="text-center" for="fans" style="width:fit-content;">Fans</label>
+                                </div>
+                                <div class="col mx-auto" style="width: fit-content;">
+                                    <input type="number" name="fans" value="0" min="0" class="text-center required-inputs form-control" id="fans" style="width: 5rem;"/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm mt-2">
+                                <div class="col text-center">
+                                    <label class="text-center" for="lights" style="width:fit-content;">Lights</label>
+                                </div>
+                                <div class="col mx-auto" style="width: fit-content;">
+                                    <input type="number" name="lights" value="0" min="0" class="text-center required-inputs form-control" id="lights" style="width: 5rem;"/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm mt-2">
+                                <div class="col text-center">
+                                    <label class="text-center" for="TVs" style="width:fit-content;">TVs</label>
+                                </div>
+                                <div class="col mx-auto" style="width: fit-content;">
+                                    <input type="number" name="TVs" value="0" min="0" class="text-center required-inputs form-control" id="TVs" style="width: 5rem;"/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm mt-2">
+                                <div class="col text-center">
+                                    <label class="text-center" for="low-voltage-sockets" style="width:fit-content;">Boards</label>
+                                </div>
+                                <div class="col mx-auto" style="width: fit-content;">
+                                    <input type="number" name="lv_switch_boards" value="0" min="0" class="text-center required-inputs form-control" id="low-voltage-sockets" style="width: 5rem;"/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-1">
+                        <span>  </span>
+                    </div>
+
+                    <div class="col">
+                        <p class="fs-5 text-center my-auto">High Power Appliances</p>
+                        <div class="row align-self-center">
+
+                            <div class="col-sm mt-2">
+                                <div class="col text-center">
+                                    <label class="text-center" for="ACs" style="width:fit-content;">ACs</label>
+                                </div>
+                                <div class="col mx-auto" style="width: fit-content;">
+                                    <input type="number" name="ACs" value="0" min="0" class="text-center required-inputs form-control" id="ACs" style="width: 5rem;"/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm mt-2">
+                                <div class="col text-center">
+                                    <label class="text-center" for="refrigerators" style="width:fit-content;">Refrigerators</label>
+                                </div>
+                                <div class="col mx-auto" style="width: fit-content;">
+                                    <input type="number" name="refrigerators" value="0" min="0" class="text-center required-inputs form-control" id="refrigerators" style="width: 5rem;"/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm mt-2">
+                                <div class="col text-center">
+                                    <label class="text-center" for="oven" style="width:fit-content;">Electric Oven</label>
+                                </div>
+                                <div class="col mx-auto" style="width: fit-content;">
+                                    <input type="number" name="ovens" value="0" min="0" class="text-center required-inputs form-control" id="oven" style="width: 5rem;"/>
+                                </div>
+                            </div>
+
+                            <div class="col-sm mt-2">
+                                <div class="col text-center">
+                                    <label class="text-center" for="high-voltage-sockets" style="width:fit-content;">Boards</label>
+                                </div>
+                                <div class="col mx-auto" style="width: fit-content;">
+                                    <input type="number" name="hv_switch_boards" value="0" min="0" class="text-center required-inputs form-control" id="high-voltage-sockets" style="width: 5rem;"/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<form class="align-items-center" action="/calculator/flat-submit/" method="post">
+    {% csrf_token %}
+    <div id="main-form">
+
+        <div id="sub-form-0" class="sub-form">
+
+            <!-- Floor Plan Form -->
+            <div id="floor-plan-form" class="card mx-auto text-bg-dark pb-4" style="margin-top: 40px;width: 80%;">
+                
+                <div class="card-header text-bg-light text-center">
+                    <p class="text-center my-auto">Floor Plan for the Flat</p>
+                </div>
+                
+                <div class="container">
+                    
+                    <div class="row mt-2">
+
+
+                        <!-- Type of connection -->
+                        <div class="col-md align-self-center">
+                            <p class="fs-5 my-auto text-center">Connection Type</p>
+                            <select name="type_of_connection" class="mt-2 form-select mx-auto text-center" style="width: 10rem;" aria-label="Default select example">
+                                <option selected value="single_phase">Single Phase</option>
+                                <option value="three_phase">Three Phase</option>
+                            </select>
+                            <div class="row mt-2 align-self-center">  
+                            </div>
+                        </div>
+
+                        <!-- Provision of UPS -->
+                        <div class="col-md align-self-center">
+                            <p class="fs-5 my-auto text-center">Provision of UPS</p>
+                            <select name="ups_available" class="mt-2 form-select mx-auto text-center" style="width: 6rem;" aria-label="Default select example">
+                                <option selected value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                            <div class="row mt-2 align-self-center">  
+                            </div>
+                        </div>
+
+                        <!-- Dimensions in ft. -->
+                        <div class="col-md align-self-center">
+                            <p class="fs-5 my-auto text-center">Dimensions in ft.</p>
+                            <div class="row">
+                                <div class="col-md">
+                                    <input type="number" name="length_floor" min="1" required class="m-2 mx-auto required-inputs form-control text-center" style="width: 8rem;" placeholder="Length" aria-label="Length">
+                                </div>
+                                <div class="col-md">    
+                                    <input type="number" name="width_floor" min="1" required class="m-2 mx-auto required-inputs form-control text-center" style="width: 8rem;" placeholder="Width" aria-label="Width">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Number of Living Units -->
+                        <div class="col-md align-self-center">
+                            <p class="fs-5 my-auto text-center">Number of Living Units</p>
+    
+                            <div class="row mt-2 align-self-center">
+                                <input id="num-living-units" type="number" min="1" name="num_living_units" required class="required-inputs mx-auto form-control text-center living_units" style="width: 8rem;" aria-label="num_lu">
+                            </div>
+                        </div>
+
+                    </div>
+    
+                </div>
+            </div>
+
+        </div>
+    
+    </div>
+
+    <div class="text-center mt-4">
+        <button class="btn btn-dark" type="submit">Calculate</button>
+    </div>
+
+</form>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+const num_living_units = document.getElementById("num-living-units");
+    num_living_units.addEventListener("blur", function(event) {
+
+        let element = event.srcElement;
+        console.log(element)
+        console.log("here")
+        for (let i=0; i<6; i++){
+            element = element.parentElement
+        }
+
+        // remove previous forms
+        const sub_forms = element.querySelectorAll(".lu-form");
+        sub_forms.forEach(sub_form => {
+        sub_form.remove();
+        });
+
+        // add new forms
+        const sub_form = document.getElementById('living-unit-form')
+        const N = element.getElementsByClassName('required-inputs mx-auto form-control text-center living_units')[0].value
+
+        for (let i=1; i<=N; i++){
+            const main_form = document.getElementById(element.id);
+
+            const div = document.createElement('div')        
+            div.innerHTML = sub_form.innerHTML
+            div.id = sub_form.id
+            div.classList = sub_form.classList
+            div.classList.add("lu-form")
+            div.style.marginTop = "100px"
+            div.style.width = "80%"
+
+            // add required attribute to all numeric inputs of the form
+            var els = div.getElementsByClassName("required-inputs form-control");
+            Array.from(els).forEach((el) => {
+                el.setAttribute('required', '');
+            });
+
+            div.childNodes.forEach(child => {
+                if (child.id == "header"){
+                    child.innerHTML= "Living Unit# " + i;
+                }
+
+            })
+
+            main_form.appendChild(div)
+        }         
+
+    });
+
+</script>
+{% endblock %}
